@@ -1,0 +1,295 @@
+/* =========================================================
+   ESTILO VERDE NATURAL (FONDO OSCURO Y TARJETAS VERDE SUAVE)
+   Curso: Cuidado de lo Público y el Colegio
+   ========================================================= */
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    /* Fondo verde oscuro forestal */
+    background: linear-gradient(
+        180deg,
+        #0b251a 0%,
+        #133c2a 50%,
+        #1b4332 100%
+    );
+    min-height: 100vh;
+    color: #081c15; /* Texto principal verde ultra-oscuro para lectura fácil */
+    padding-bottom: 50px;
+}
+
+/* CONTROL DE PANTALLAS */
+.pantalla {
+    display: none;
+}
+
+.pantalla.activa {
+    display: block;
+}
+
+/* ESCUDO DEL COLEGIO */
+.escudo-principal {
+    width: 130px;
+    display: block;
+    margin: 0 auto 20px auto;
+}
+
+/* CONTENEDOR DE REGISTRO (Pantalla Inicial) */
+.registro-container {
+    width: 90%;
+    max-width: 600px;
+    margin: 40px auto;
+    background: #e8f5e9; /* Tarjeta en verde suave */
+    padding: 35px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    text-align: center;
+    border: 2px solid #b7e4c7;
+}
+
+.registro-container h1 {
+    color: #1b4332;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.registro-container h2 {
+    color: #2d6a4f;
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.subtitulo {
+    font-size: 15px;
+    line-height: 1.4;
+    color: #1b4332;
+    margin-bottom: 20px;
+}
+
+.duracion {
+    font-size: 14px;
+    font-weight: bold;
+    color: #1b4332;
+    background: #d8f3dc; /* Verde intermedio suave */
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 25px;
+    border: 1px solid #b7e4c7;
+}
+
+.registro-formulario {
+    text-align: left;
+}
+
+/* ENTRADAS DE TEXTO Y SELECCIÓN */
+label {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-size: 16px;
+    color: #1b4332;
+}
+
+input[type="text"],
+select {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #95d5b2;
+    border-radius: 10px;
+    font-size: 16px;
+    box-sizing: border-box;
+    color: #081c15;
+    background: #f4faf6; /* Un verde casi blanco para los campos */
+}
+
+input[type="text"]:focus,
+select:focus {
+    outline: none;
+    border-color: #1b4332;
+    background: #ffffff;
+}
+
+/* BOTONES */
+button {
+    background: #2d6a4f;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px;
+    font-weight: bold;
+    transition: background 0.2s;
+}
+
+button:hover {
+    background: #1b4332;
+}
+
+#btnIniciar {
+    width: 100%;
+    font-size: 18px;
+    padding: 14px;
+    background: #1b4332;
+}
+
+#btnIniciar:hover {
+    background: #0b251a;
+}
+
+/* BARRA SUPERIOR DE PROGRESO */
+.barra-superior {
+    background: #e8f5e9; /* Verde suave */
+    padding: 15px 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    border-bottom: 2px solid #b7e4c7;
+}
+
+.usuario-info {
+    font-size: 16px;
+    font-weight: bold;
+    color: #1b4332;
+}
+
+.progreso-general {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.barra-progreso {
+    width: 150px;
+    height: 12px;
+    background: #d8f3dc;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid #95d5b2;
+}
+
+.barra-progreso-fill {
+    height: 100%;
+    width: 0%;
+    background: #1b4332;
+    transition: width 0.4s;
+}
+
+/* NAVEGACIÓN DE MÓDULOS */
+.nav-modulos {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px auto;
+    width: 90%;
+    max-width: 1000px;
+    overflow-x: auto;
+    padding: 5px;
+}
+
+.btn-modulo {
+    background: #e8f5e9; /* Verde suave */
+    color: #1b4332;
+    border: 2px solid #95d5b2;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 14px;
+    cursor: pointer;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.btn-modulo.activo {
+    background: #1b4332;
+    color: #e8f5e9;
+    border-color: #1b4332;
+}
+
+.btn-modulo.completado {
+    background: #95d5b2;
+    color: #081c15;
+    border-color: #2d6a4f;
+}
+
+.btn-modulo.bloqueado {
+    opacity: 0.4;
+    background: #133c2a;
+    color: #558b6e;
+    border-color: #24583f;
+    cursor: not-allowed;
+}
+
+/* CONTENIDO PRINCIPAL */
+main {
+    width: 90%;
+    max-width: 800px;
+    margin: auto;
+}
+
+/* TARJETAS (Verde suave en vez de blanco) */
+.modulo-card {
+    background: #e8f5e9; /* Verde suave */
+    margin: 25px 0;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+    border: 1px solid #b7e4c7;
+}
+
+.modulo-titulo {
+    color: #1b4332;
+    margin-top: 0;
+    font-size: 24px;
+    border-bottom: 2px solid #95d5b2;
+    padding-bottom: 10px;
+}
+
+.modulo-descripcion {
+    font-size: 16px;
+    line-height: 1.5;
+    margin: 15px 0;
+    color: #1b4332;
+}
+
+/* VIDEO RESPONSIVE */
+.video-responsive {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    border-radius: 15px;
+    margin: 20px 0;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.video-responsive iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* SECCIÓN LECTURAS */
+.lectura-seccion {
+    background: #f4faf6; /* Un tono aún más suave de verde para contrastar con la tarjeta */
+    border-left: 5px solid #1b4332;
+    padding: 20px;
+    border-radius: 0 15px 15px 0;
+    margin: 25px 0;
+}
+
+.lectura-seccion h3 {
+    margin-top: 0;
+    color: #1b4332;
+}
+
+.lectura-seccion ul {
+    padding-left: 20px;
+    

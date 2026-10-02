@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso: Cuidado de lo Público y el Colegio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+<!-- ==================== PANTALLA DE REGISTRO ==================== -->
+<div id="pantallaRegistro" class="pantalla activa">
+    <div class="registro-container">
+        <div class="registro-header">
+            <img src="escudo_inem.png" alt="Escudo INEM" class="escudo-principal">
+            <h1><i class="fas fa-school"></i> INEM Francisco de Paula Santander</h1>
+            <h2>Curso: Cuidado de lo Público y el Colegio</h2>
+            <p class="subtitulo">Aprende a valorar, proteger y cuidar los espacios públicos
+                y los recursos de nuestra institución educativa.</p>
+            <div class="duracion">
+                <i class="fas fa-clock"></i> Duración estimada: 2 horas &nbsp;|&nbsp;
+                <i class="fas fa-list-check"></i> 5 Módulos &nbsp;|&nbsp;
+                <i class="fas fa-award"></i> Certificado al finalizar
+            </div>
+        </div>
+
+        <div class="registro-formulario">
+            <h3><i class="fas fa-user-plus"></i> Registro del Participante</h3>
+
+            <label for="nombre">Nombre completo:</label>
+            <input type="text" id="nombre" placeholder="Ej: Juan David Pérez López" required>
+
+            <label for="documento">Número de documento:</label>
+            <input type="text" id="documento" placeholder="Ej: 1085300000" required>
+
+            <label for="rol">Tipo de participante:</label>
+            <select id="rol">
+                <option value="">-- Selecciona --</option>
+                <option value="Estudiante"> Estudiante</option>
+                <option value="Docente"> Docente</option>
+            </select>
+
+            <button id="btnIniciar" onclick="iniciarCurso()">
+                <i class="fas fa-play-circle"></i> Iniciar Curso
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- ==================== PANTALLA DEL CURSO ==================== -->
+<div id="pantallaCurso" class="pantalla">
+
+    <!-- BARRA DE PROGRESO GENERAL -->
+    <div class="barra-superior">
+        <div class="usuario-info">
+            <span id="infoUsuario"></span>
+        </div>
+        <div class="progreso-general">
+            <div class="progreso-texto">Progreso general: <span id="progresoTexto">0%</span></div>
+            <div class="barra-progreso">
+                <div class="barra-progreso-fill" id="barraProgreso"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- NAVEGACIÓN DE MÓDULOS -->
+    <div class="nav-modulos">
+        <button class="btn-modulo activo" id="btnMod1" onclick="irAModulo(1)" disabled>
+            <i class="fas fa-landmark"></i><span>Módulo 1</span>
+        </button>
+        <button class="btn-modulo bloqueado" id="btnMod2" onclick="irAModulo(2)" disabled>
+            <i class="fas fa-chair"></i><span>Módulo 2</span>
+        </button>
+        <button class="btn-modulo bloqueado" id="btnMod3" onclick="irAModulo(3)" disabled>
+            <i class="fas fa-hands-holding"></i><span>Módulo 3</span>
+        </button>
+        <button class="btn-modulo bloqueado" id="btnMod4" onclick="irAModulo(4)" disabled>
+            <i class="fas fa-recycle"></i><span>Módulo 4</span>
+        </button>
+        <button class="btn-modulo bloqueado" id="btnMod5" onclick="irAModulo(5)" disabled>
+            <i class="fas fa-heart"></i><span>Módulo 5</span>
+        </button>
+    </div>
+
+    <!-- CONTENEDOR DE MÓDULOS -->
+    <main id="contenedorModulos">
+        <!-- Los módulos se cargan dinámicamente desde JavaScript -->
+    </main>
+</div>
+
+<!-- ==================== PANTALLA DEL CERTIFICADO ==================== -->
+<div id="pantallaCertificado" class="pantalla">
+    <div id="certificado">
+        <div class="certificado-borde">
+            <img src="escudo_inem.png" alt="Escudo" class="escudo-certificado">
+            <h2>CERTIFICADO DE APROBACIÓN</h2>
+            <div class="linea-decorativa"></div>
+            <p class="cert-texto">La Institución Educativa</p>
+            <h3>INEM Francisco de Paula Santander</h3>
+            <p class="cert-texto">Certifica que:</p>
+            <h2 id="certNombre" class="cert-nombre"></h2>
+            <p class="cert-texto">Identificado(a) con documento N°</p>
+            <h3 id="certDocumento" class="cert-documento"></h3>
+            <p class="cert-texto">En calidad de <strong><span id="certRol"></span></strong>,
+                ha completado y aprobado satisfactoriamente el</p>
+            <h3 class="cert-curso">Curso de Cuidado de lo Público y el Colegio</h3>
+            <p class="cert-texto">Con una duración de <strong>2 horas</strong>,
+                aprobando los 5 módulos con un mínimo del 80% en cada evaluación.</p>
+            <div class="linea-decorativa"></div>
+            <p id="certFecha" class="cert-fecha"></p>
+            <div class="cert-firmas">
+                <div class="firma">
+                    <div class="linea-firma"></div>
+                    <p>Coordinación Académica</p>
+                </div>
+                <div class="firma">
+                    <div class="linea-firma"></div>
+                    <p>Rectoría</p>
+                </div>
+            </div>
+            <p class="cert-folio">Folio N°: <span id="certFolio"></span></p>
+        </div>
+    </div>
+    <button id="btnDescargarPDF" onclick="descargarCertificado()">
+        <i class="fas fa-download"></i> Descargar Certificado PDF
+    </button>
+    <button onclick="location.reload()" class="btn-reiniciar">
+        <i class="fas fa-redo"></i> Realizar otro curso
+    </button>
+</div>
+
+<script src="modulos.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
